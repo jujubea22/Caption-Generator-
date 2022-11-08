@@ -23,3 +23,11 @@ THEN a caption is generated that matches the user input
 
 WHEN the caption is generated
 THEN caption is written to the page
+
+
+
+
+
+API's for Project #1
+Google Custom Search API 
+Words API
