@@ -1,0 +1,50 @@
+body {
+    background-color: antiquewhite;
+    color: rgba(26, 2, 2, 0.615);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif
+}
+
+.containerEl {
+    background-color: antiquewhite;
+    background-size: cover;
+    padding: 1.8rem;
+    border-radius: 2rem;
+    border: 22px solid rgba(238, 242, 245, 0.454);
+    border-style: ridge;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#situationBtn {
+    /* display: none; */
+
+
+} 
+
+.ssBtn {
+    font-family: sans-serif;
+    font-size: 10px;
+    grid-column: span 2;
+    background-color: rgb(205, 231, 245);
+    border: 2px;
+    padding: .5rem;
+    cursor: grab;
+    border: 4px;
+    border-style: ridge;
+}
+
+.captionEl {
+    color: rgb(230, 216, 159);
+    text-decoration: underline;
+}
+
+.captionEl {
+
+}
