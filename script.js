@@ -1,5 +1,5 @@
 // 
-var Friendship = [
+var friendshipEl = [
     Friends ‘till the end.
     A true friend is one soul in two bodies.
     Your vibe attracts your tribe.
@@ -13,11 +13,11 @@ var Friendship = [
 ]
 
 function newCaption() {
-    var randomNumber = Math.floor(Math.random() * (Friendship.length));
-    document.getElementById('situationBtn').innerHTML = Friendship[randomNumber];
+    var randomNumber = Math.floor(Math.random() * (friendshipEl.length));
+    document.getElementById('situationBtn').innerHTML = friendshipEl[randomNumber];
 }
 
-var Vacation = [
+var vacationsEl = [
     Always take the scenic route.
     An adventure a day keeps the doctor away.
     Be back never.
@@ -33,11 +33,11 @@ var Vacation = [
 
 
 function newCaption() {
-    var randomNumber = Math.floor(Math.random() * (Vacation.length));
-    document.getElementById('situationBtn').innerHTML = Vacation[randomNumber];
+    var randomNumber = Math.floor(Math.random() * (vacationsEl.length));
+    document.getElementById('situationBtn').innerHTML = vacationsEl[randomNumber];
 }
 
-var Holidays = [
+var holidaysEl = [
     Work, travel, save, repeat.
     What’s the holiday season without a trip to Santa’s Workshop?
     I ate the turkey, and now it’s time for some vitamin sea.
@@ -54,11 +54,11 @@ var Holidays = [
 ]
 
 function newCaption() {
-    var randomNumber = Math.floor(Math.random() * (Holidays.length));
-    document.getElementById('situationBtn').innerHTML = Holidays[randomNumber];
+    var randomNumber = Math.floor(Math.random() * (holidaysEl.length));
+    document.getElementById('situationBtn').innerHTML = holidaysEl[randomNumber];
 }
 
-var ThemeParks = [
+var themeEl = [
     I learned to keep my eyes open and my mouth shut.
     The amusement park was our best invention; the museum, our worst.
     Help Me Find My Stomach
@@ -67,16 +67,16 @@ var ThemeParks = [
     A Family Af”fair”
     How to enjoy a ride any suggestions?
     My writing is all wrong, it has yet to capture the crazy never ending Ferris wheel.
-    All friendships should find their way to a Ferris wheel.
+    All friendshipEls should find their way to a Ferris wheel.
     Certainty a strange Ferris wheel of a statement.
 ]
 
 function newCaption() {
-    var randomNumber = Math.floor(Math.random() * (ThemeParks.length));
-    document.getElementById('situationBtn').innerHTML = ThemeParks[randomNumber];
+    var randomNumber = Math.floor(Math.random() * (themeEl.length));
+    document.getElementById('situationBtn').innerHTML = themeEl[randomNumber];
 }
 
-var Outdoors = [
+var outdoorsEl = [
     Time spent on trees is never wasted time.
     Fashion is temporary, but nature never goes out of style
     Beautiful things don’t ask for attention
@@ -91,8 +91,6 @@ var Outdoors = [
 ]
 
 function newCaption() {
-    var randomNumber = Math.floor(Math.random() * (Outdoors.length));
-    document.getElementById('situationBtn').innerHTML = Outdoors[randomNumber];
+    var randomNumber = Math.floor(Math.random() * (outdoorsEl.length));
+    document.getElementById('situationBtn').innerHTML = outdoorsEl[randomNumber];
 }
-
-getElementById
