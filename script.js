@@ -6,6 +6,8 @@ var themeEl = document.getElementById('ssBtn4')
 var outdoorsEl = document.getElementById('ssBtn5')
 var captionEl = document.getElementsByClassName('captionEl')[0]
 
+var textContainer = document.getElementById('textContainer')
+var refreshBtn = document.getElementById('refresh')
 
 function start() {
     captionEl.innerHTML = 'Caption Generator'
@@ -26,6 +28,7 @@ function hideBtn() {
     themeEl.setAttribute('style', 'display:none');
     outdoorsEl.setAttribute('style', 'display:none');
 
+    refreshBtn.remove('class')
 }
 
 var friendshipCaption = [ "Friends ‘till the end.", 
@@ -100,10 +103,25 @@ var vacationCaption = [
 
 function showCaption(captionArr) {
     var newDisplay = newCaption(captionArr)
-    document.getElementById('paragraphEl').innerHTML = newDisplay
+
+    var pEl =  document. createElement('p')
+    pEl.textContent = newDisplay
+
+
+    var refreshBtn = document.createElement('button');
+    refreshBtn.textContent = 'Refresh'
+    refreshBtn.setAttribute('class', 'ssBtn')
+
+    // document.getElementById('paragraphEl').textContent = newDisplay
     // captionEl.setAttribute('style', 'display:none')
     captionEl.innerHTML = "Caption here"
     console.log(captionEl)
+
+    refreshBtn.addEventListener('click', function(){
+      window.location.href = 'index.html'
+    }) 
+
+    textContainer.append(pEl, refreshBtn)
 }
 
 
