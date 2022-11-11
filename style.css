@@ -23,12 +23,64 @@ body {
 }
 
 #situationBtn {
-    /* display: none; */
+
 
 
 } 
 
-.ssBtn {
+.captionEl {
+    /* display: none; */
+}
+
+#ssBtn1 {
+    font-family: sans-serif;
+    font-size: 10px;
+    grid-column: span 2;
+    background-color: rgb(205, 231, 245);
+    border: 2px;
+    padding: .5rem;
+    cursor: grab;
+    border: 4px;
+    border-style: ridge;
+}
+
+#ssBtn2 {
+    font-family: sans-serif;
+    font-size: 10px;
+    grid-column: span 2;
+    background-color: rgb(205, 231, 245);
+    border: 2px;
+    padding: .5rem;
+    cursor: grab;
+    border: 4px;
+    border-style: ridge;
+}
+
+#ssBtn3 {
+    font-family: sans-serif;
+    font-size: 10px;
+    grid-column: span 2;
+    background-color: rgb(205, 231, 245);
+    border: 2px;
+    padding: .5rem;
+    cursor: grab;
+    border: 4px;
+    border-style: ridge;
+}
+
+#ssBtn4 {
+    font-family: sans-serif;
+    font-size: 10px;
+    grid-column: span 2;
+    background-color: rgb(205, 231, 245);
+    border: 2px;
+    padding: .5rem;
+    cursor: grab;
+    border: 4px;
+    border-style: ridge;
+}
+
+#ssBtn5 {
     font-family: sans-serif;
     font-size: 10px;
     grid-column: span 2;
