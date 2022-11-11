@@ -97,3 +97,19 @@ body {
     justify-content:center;
     flex-direction: column;
 }
+
+form {
+  width: 400px;
+  margin: auto;
+  margin-top: 250px;
+}
+
+.search {
+  width: 75%;
+}
+
+.submit {
+  width: 70px;
+  background-color: #1c87c9;
+  color: #ffffff;
+}
