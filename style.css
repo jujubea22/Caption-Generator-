@@ -87,3 +87,13 @@ body {
 .ssBtn:hover {
     background-color: rgb(254, 194, 63);
 }
+
+.hide{
+    display: none;
+}
+
+.textContainer{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+}
