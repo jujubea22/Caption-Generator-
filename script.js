@@ -4,10 +4,23 @@ var vacationEl = document.getElementById('ssBtn2')
 var holidaysEl = document.getElementById('ssBtn3')
 var themeEl = document.getElementById('ssBtn4')
 var outdoorsEl = document.getElementById('ssBtn5')
+var captionEl = document.getElementsByClassName('captionEl')[0]
+
+
+function start() {
+    captionEl.innerHTML = 'Caption Generator'
+}
+
+start()
+
+function hideContainer() {
+    captionEl.setAttribute('style', 'display:none')
+}
+
 
 
 function hideBtn() {
-    friendshipEl.style.display = 'none';
+    friendshipEl.setAttribute('style', 'display:none');
     vacationEl.setAttribute('style', 'display:none');
     holidaysEl.setAttribute('style', 'display:none');
     themeEl.setAttribute('style', 'display:none');
@@ -88,7 +101,11 @@ var vacationCaption = [
 function showCaption(captionArr) {
     var newDisplay = newCaption(captionArr)
     document.getElementById('paragraphEl').innerHTML = newDisplay
+    // captionEl.setAttribute('style', 'display:none')
+    captionEl.innerHTML = "Caption here"
+    console.log(captionEl)
 }
+
 
 
 document.querySelectorAll('.ssBtn').forEach(x=>x.addEventListener('click', hideBtn))
@@ -117,12 +134,7 @@ function newCaption(captionArr) {
 
 
 
-// if ('click' === true) {
-//     document.getElementById('paragraphEl').setAttribute('style', 'display:block');
-//    } else {
-//     document.getElementById('paragraphEl').setAttribute('style', 'display:none');
-//    }
-//    return 
+
 
 // // hide div container
 // document.getElementById("situationBtn").setAttribute('style', 'display: none');
