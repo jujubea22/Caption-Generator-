@@ -8,6 +8,8 @@ var captionEl = document.getElementsByClassName('captionEl')[0];
 
 var textContainer = document.getElementById('textContainer');
 var previousBtn = document.createElement('button');
+
+// array to store captions in localstorage
 var userCaptions = [];
 
 
