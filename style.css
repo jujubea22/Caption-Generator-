@@ -1,16 +1,16 @@
 body {
-    background-color: antiquewhite;
+    background-color: rgb(0, 0, 0);
     color: rgba(26, 2, 2, 0.615);
     min-height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif
+    font-family: monospace;
 }
 
 .containerEl {
-    background-color: antiquewhite;
+    background-image: url(assets/sea-edge-79ab30e2.jpg);
     background-size: cover;
     padding: 1.8rem;
     border-radius: 2rem;
@@ -22,29 +22,78 @@ body {
     align-items: center;
 }
 
-#situationBtn {
-    /* display: none; */
+.ssBtn {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
 
-
-} 
+.ssBtn:hover .ssBtn-slide-show-text1 {
+    margin-left: 65px;
+}
 
 .ssBtn {
-    font-family: sans-serif;
-    font-size: 10px;
-    grid-column: span 2;
-    background-color: rgb(205, 231, 245);
-    border: 2px;
-    padding: .5rem;
-    cursor: grab;
-    border: 4px;
-    border-style: ridge;
+    border: 0px;
+    background: rgb(255, 255, 255);
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: normal;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 16px 56px 22px;
+    border-radius: 6px;
+    margin: 0px 0px 16px;
+    transition: all 0.5s ease 0s;
+    overflow: hidden;
+    position: relative;
 }
 
-.captionEl {
-    color: rgb(230, 216, 159);
-    text-decoration: underline;
+.ssBtn::after {
+    content: "";
+    display: block;
+    height: 7px;
+    width: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background-size: 7px 7px;
 }
 
-.captionEl {
+.ssBtn:hover {
+    color: rgb(255, 255, 255);
+}
 
+.ssBtn:hover::after {
+    background-image: repeating-linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 255) 1px, transparent 2px, transparent 5px);
+    animation: 12s linear 0s infinite normal forwards running stripe-slide;
+}
+
+.ssBtn {
+    color: rgb(254, 194, 63);
+    border: 2px solid rgb(254, 194, 63);
+}
+
+.ssBtn::after {
+    border-top: 2px solid rgb(254, 194, 63);
+    background-image: repeating-linear-gradient(45deg, rgb(63, 216, 254), rgb(254, 194, 63) 1px, transparent 2px, transparent 5px);
+}
+
+.ssBtn:hover {
+    background-color: rgb(254, 194, 63);
+}
+
+.hide{
+    display: none;
+}
+
+.textContainer{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
 }
