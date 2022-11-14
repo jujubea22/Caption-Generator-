@@ -5,12 +5,14 @@ var holidaysEl = document.getElementById('ssBtn3')
 var themeEl = document.getElementById('ssBtn4')
 var outdoorsEl = document.getElementById('ssBtn5')
 var captionEl = document.getElementsByClassName('captionEl')[0]
-
 var textContainer = document.getElementById('textContainer')
 var refreshBtn = document.getElementById('refresh')
 
 function start() {
-    captionEl.innerHTML = 'Caption Generator'
+    captionEl.innerHTML = 'Choose Caption Category'
+    captionEl.style.fontFamily = 'Air Travelers'
+    captionEl.style.color = 'rgba(62, 182, 237, 0.582)'
+    captionEl.style.textShadow = '1px 1px 1px , 1px 5px 2px #363945'
 }
 
 start()
@@ -101,7 +103,7 @@ var vacationCaption = [
 
 
 
-function showCaption(captionArr) {
+  function showCaption(captionArr) {
     var newDisplay = newCaption(captionArr)
 
     var pEl =  document. createElement('p')
@@ -111,10 +113,10 @@ function showCaption(captionArr) {
     var refreshBtn = document.createElement('button');
     refreshBtn.textContent = 'Refresh'
     refreshBtn.setAttribute('class', 'ssBtn')
+    refreshBtn.style.margin = '0 auto'
+    refreshBtn.style.display = 'block'
 
-    // document.getElementById('paragraphEl').textContent = newDisplay
-    // captionEl.setAttribute('style', 'display:none')
-    captionEl.innerHTML = "Caption here"
+    captionEl.innerHTML = "Thinking of the right caption is hard, heres one on us  :"
     console.log(captionEl)
 
     refreshBtn.addEventListener('click', function(){
@@ -124,11 +126,8 @@ function showCaption(captionArr) {
     textContainer.append(pEl, refreshBtn)
 }
 
-
-
 document.querySelectorAll('.ssBtn').forEach(x=>x.addEventListener('click', hideBtn))
   
-
 
 friendshipEl.addEventListener('click', ()=>showCaption(friendshipCaption))
 vacationEl.addEventListener('click', ()=>showCaption(vacationCaption))
@@ -137,25 +136,9 @@ themeEl.addEventListener('click', ()=>showCaption(themeCaption))
 outdoorsEl.addEventListener('click', ()=>showCaption(outdoorsCaption))
 
 
-// document.getElementById('paragraphEl').innerHTML = ["fdsdsfsa", 'sdfdfg']
-
-
-
-
 function newCaption(captionArr) {
     
-
     var randomNumber = Math.floor(Math.random() * (captionArr.length));
     var randomCaption = captionArr[randomNumber]
     return randomCaption
 }
-
-
-
-
-
-// // hide div container
-// document.getElementById("situationBtn").setAttribute('style', 'display: none');
-// // display div container
-// document.getElementById("id-name").setAttribute('style', 'display: block');
-
