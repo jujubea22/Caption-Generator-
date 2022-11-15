@@ -142,3 +142,9 @@ function newCaption(captionArr) {
     var randomCaption = captionArr[randomNumber]
     return randomCaption
 }
+
+
+fetch('https://serpapi.com//search?engine?q=google_trends&tbm=isch&ijn=0&api_key=6f145bea7dab7af91e5531e4a384e80f26ac3fc416ec69ca0d93348e359b0662')
+.then(res=>{
+    console.log(res)
+})

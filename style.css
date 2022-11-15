@@ -10,7 +10,16 @@ body {
     font-size: 15px;
 }
 
-
+.fa {
+    padding: 0px;
+    font-size: 50px;
+    width: 60px;
+    text-decoration: none;
+    border-radius: 50%;
+    color: aliceblue;
+    
+    
+  }
 
 .containerEl {
     background-image: url(assets/sea-edge-79ab30e2.jpg);
