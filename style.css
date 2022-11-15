@@ -11,12 +11,13 @@ body {
 }
 
 .fa {
-    padding: 0px;
+    padding: 10px;
     font-size: 50px;
     width: 60px;
     text-decoration: none;
     border-radius: 50%;
     color: aliceblue;
+    
     
     
   }
@@ -103,15 +104,26 @@ body {
     background-color: rgba(62, 182, 237, 0.582);
 }
 
-
-
+footer {
+    margin-left: auto;
+    margin-right:auto;
+    position: fixed;
+    bottom: 15px;
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 @font-face {
     font-family: Air Travelers;
-    src: url(assets/AirtravelerspersonaluseBdit-gxgyE.otf);
+    src: url(assets/Cream\ Peach.otf);
 }
 @font-face {
     font-family: Air Travelers;
     font-weight: bold;
-    src: url(assets/AirtravelerspersonaluseBdit-gxgyE.otf);
+    src: url(assets/Cream\ Peach.otf);
 }
+
+
+  

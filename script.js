@@ -11,7 +11,6 @@ var refreshBtn = document.getElementById('refresh')
 function start() {
     captionEl.innerHTML = 'Choose Caption Category'
     captionEl.style.fontFamily = 'Air Travelers'
-    captionEl.style.color = 'rgba(62, 182, 237, 0.582)'
     captionEl.style.textShadow = '1px 1px 1px , 1px 5px 2px #363945'
 }
 
@@ -101,7 +100,8 @@ var vacationCaption = [
     "Trailblazin’ through the weekend",
   ]
 
-
+ localStorage.setItem('outdoorsCaption', [])
+ console.log(localStorage)
 
   function showCaption(captionArr) {
     var newDisplay = newCaption(captionArr)
@@ -144,7 +144,7 @@ function newCaption(captionArr) {
 }
 
 
-fetch('https://serpapi.com//search?engine?q=google_trends&tbm=isch&ijn=0&api_key=6f145bea7dab7af91e5531e4a384e80f26ac3fc416ec69ca0d93348e359b0662')
-.then(res=>{
-    console.log(res)
-})
+// fetch('https://serpapi.com//search?engine?q=google_trends&tbm=isch&ijn=0&api_key=6f145bea7dab7af91e5531e4a384e80f26ac3fc416ec69ca0d93348e359b0662')
+// .then(res=>{
+//     console.log(res)
+// })
