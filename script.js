@@ -142,3 +142,4 @@ function newCaption(captionArr) {
     var randomCaption = captionArr[randomNumber]
     return randomCaption
 }
+<FontAwesomeIcon icon="fa-brands fa-square-facebook" />
