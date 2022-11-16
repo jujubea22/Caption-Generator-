@@ -7,19 +7,15 @@ var outdoorsEl = document.getElementById('ssBtn5');
 var captionEl = document.getElementsByClassName('captionEl')[0];
 
 var textContainer = document.getElementById('textContainer');
-var previousBtn = document.createElement('button');
 
 // array to store captions in localstorage
-var userCaptions = [];
+var userGeneratedCaptionsArr = [];
 
 
 
 function start() {
     captionEl.innerHTML = 'Caption Generator';
-    var userCaptionsString = localStorage.getItem("userCaptions");
-    if(userCaptionsString !== undefined && userCaptionsString !== null && userCaptionsString !== "") {
-      userCaptions = JSON.parse(userCaptionsString);
-    } 
+
 }
 
 start()
@@ -112,26 +108,44 @@ var vacationCaption = [
 
 
 
-function showCaption(captionArr) {
+function showCaption(captionArr, storageArea) {
+  
+  // loads items from local storage
+  var userCaptionsString = localStorage.getItem(storageArea);
+  if(userCaptionsString !== undefined && userCaptionsString !== null && userCaptionsString !== "") {
+    userGeneratedCaptionsArr = JSON.parse(userCaptionsString);
+  } 
+
+  // sets empty array if localstorage array is equal in length to the captions array. 
+  if(userGeneratedCaptionsArr.length == captionArr.length) {
+    userGeneratedCaptionsArr = [];
+  }
+
     var newDisplay = newCaption(captionArr)
-   
+
+    // var to find caption in local storage array
+    var findCaptions = userGeneratedCaptionsArr.find(el => el == newDisplay);
+
+    // prevents the same caption from loading twice
+    while(findCaptions == newDisplay) {
+      newDisplay = newCaption(captionArr);
+      findCaptions = userGeneratedCaptionsArr.find(el => el == newDisplay);
+    } 
 
     var pEl =  document. createElement('p');
     pEl.textContent = newDisplay;
     pEl.setAttribute('id', 'caption');
-    userCaptions.unshift(newDisplay);
-    localStorage.setItem("userCaptions", JSON.stringify(userCaptions));
+    userGeneratedCaptionsArr.unshift(newDisplay);
+    localStorage.setItem(storageArea, JSON.stringify(userGeneratedCaptionsArr));
 
-    
-    
+
+
+
+
+
     var refreshBtn = document.createElement('button');
     refreshBtn.textContent = 'Refresh';
     refreshBtn.setAttribute('class', 'ssBtn');
-
-    previousBtn.textContent = 'Previous';
-    previousBtn.setAttribute('class', 'ssBtn');
-    
-
 
     // document.getElementById('paragraphEl').textContent = newDisplay
     // captionEl.setAttribute('style', 'display:none')
@@ -145,16 +159,6 @@ function showCaption(captionArr) {
 
     textContainer.append(pEl, refreshBtn);
 
-
-    previousBtn.addEventListener('click', ()=> showPrevious(userCaptions[1]));
-    textContainer.appendChild(previousBtn);
-}
-
-function showPrevious(previousCaption) {
-  var pEl =  document.getElementById('caption');
-  pEl.textContent = previousCaption;
-    
-
 }
 
 
@@ -164,11 +168,11 @@ document.querySelectorAll('.ssBtn').forEach(x=>x.addEventListener('click', hideB
   
 
 
-friendshipEl.addEventListener('click', ()=>showCaption(friendshipCaption))
-vacationEl.addEventListener('click', ()=>showCaption(vacationCaption))
-holidaysEl.addEventListener('click', ()=>showCaption(holidaysCaption))
-themeEl.addEventListener('click', ()=>showCaption(themeCaption))
-outdoorsEl.addEventListener('click', ()=>showCaption(outdoorsCaption))
+friendshipEl.addEventListener('click', ()=>showCaption(friendshipCaption, "userFriendshipCaptions"))
+vacationEl.addEventListener('click', ()=>showCaption(vacationCaption, "userVacationCaptions"))
+holidaysEl.addEventListener('click', ()=>showCaption(holidaysCaption, "userHolidaysCaptions"))
+themeEl.addEventListener('click', ()=>showCaption(themeCaption, "userThemeCaptions"))
+outdoorsEl.addEventListener('click', ()=>showCaption(outdoorsCaption, "userOutdoorsCaptions"))
 
 
 // document.getElementById('paragraphEl').innerHTML = ["fdsdsfsa", 'sdfdfg']
