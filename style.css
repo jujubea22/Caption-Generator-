@@ -17,10 +17,10 @@ body {
     text-decoration: none;
     border-radius: 50%;
     color: aliceblue;
-    
-    
-    
-  }
+
+
+
+}
 
 .containerEl {
     background-image: url(assets/sea-edge-79ab30e2.jpg);
@@ -29,8 +29,8 @@ body {
     border-radius: 2rem;
     border: 22px solid rgba(238, 242, 245, 0.454);
     border-style: ridge;
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
@@ -90,7 +90,8 @@ body {
 
 .ssBtn {
     color: rgba(242, 240, 244, 0.994);
-    border: 2px solid rgba(163, 248, 234, 0.764);;
+    border: 2px solid rgba(163, 248, 234, 0.764);
+    ;
     font-weight: 550;
     background-color: rgba(223, 196, 238, 0.432);
 }
@@ -106,7 +107,7 @@ body {
 
 footer {
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
     position: fixed;
     bottom: 15px;
     display: block;
@@ -119,6 +120,7 @@ footer {
     font-family: Air Travelers;
     src: url(assets/Cream\ Peach.otf);
 }
+
 @font-face {
     font-family: Air Travelers;
     font-weight: bold;
@@ -201,5 +203,3 @@ footer {
       opacity: 0.5;
     }
   } */
-
-
