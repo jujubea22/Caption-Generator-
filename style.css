@@ -1,12 +1,25 @@
 body {
-    background-color: rgb(0, 0, 0);
-    color: rgba(26, 2, 2, 0.615);
+    background-image: url(assets/anime-scenery-field-4k-9j.jpg);
+    color: rgb(251, 249, 249);
     min-height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: monospace;
+    font-size: 15px;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 50px;
+    width: 60px;
+    text-decoration: none;
+    border-radius: 50%;
+    color: aliceblue;
+
+
+
 }
 
 .containerEl {
@@ -16,8 +29,8 @@ body {
     border-radius: 2rem;
     border: 22px solid rgba(238, 242, 245, 0.454);
     border-style: ridge;
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
@@ -47,10 +60,11 @@ body {
     text-transform: uppercase;
     padding: 16px 56px 22px;
     border-radius: 6px;
-    margin: 0px 0px 16px;
+    margin: 4px 1px 1.5px;
     transition: all 0.5s ease 0s;
     overflow: hidden;
     position: relative;
+    width: 30vh;
 }
 
 .ssBtn::after {
@@ -75,25 +89,117 @@ body {
 }
 
 .ssBtn {
-    color: rgb(254, 194, 63);
-    border: 2px solid rgb(254, 194, 63);
+    color: rgba(242, 240, 244, 0.994);
+    border: 2px solid rgba(163, 248, 234, 0.764);
+    ;
+    font-weight: 550;
+    background-color: rgba(223, 196, 238, 0.432);
 }
 
 .ssBtn::after {
-    border-top: 2px solid rgb(254, 194, 63);
-    background-image: repeating-linear-gradient(45deg, rgb(63, 216, 254), rgb(254, 194, 63) 1px, transparent 2px, transparent 5px);
+    border-top: 2px solid rgba(163, 248, 234, 0.764);
+    background-image: repeating-linear-gradient(45deg, rgb(63, 216, 254), rgba(238, 238, 238, 0.949) 1px, transparent 2px, transparent 5px);
 }
 
 .ssBtn:hover {
-    background-color: rgb(254, 194, 63);
+    background-color: rgba(62, 182, 237, 0.582);
 }
 
-.hide{
-    display: none;
-}
-
-.textContainer{
+footer {
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    bottom: 15px;
+    display: block;
+    width: 100%;
     display: flex;
-    justify-content:center;
-    flex-direction: column;
+    justify-content: center;
 }
+
+@font-face {
+    font-family: Air Travelers;
+    src: url(assets/Cream\ Peach.otf);
+}
+
+@font-face {
+    font-family: Air Travelers;
+    font-weight: bold;
+    src: url(assets/Cream\ Peach.otf);
+}
+
+
+/* .loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 300px;
+    left: 385px;
+}
+
+.lds-grid {
+    display: inline-block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-grid div {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    animation: lds-grid 1.2s linear infinite;
+  }
+  .lds-grid div:nth-child(1) {
+    top: 8px;
+    left: 8px;
+    animation-delay: 0s;
+  }
+  .lds-grid div:nth-child(2) {
+    top: 8px;
+    left: 32px;
+    animation-delay: -0.4s;
+  }
+  .lds-grid div:nth-child(3) {
+    top: 8px;
+    left: 56px;
+    animation-delay: -0.8s;
+  }
+  .lds-grid div:nth-child(4) {
+    top: 32px;
+    left: 8px;
+    animation-delay: -0.4s;
+  }
+  .lds-grid div:nth-child(5) {
+    top: 32px;
+    left: 32px;
+    animation-delay: -0.8s;
+  }
+  .lds-grid div:nth-child(6) {
+    top: 32px;
+    left: 56px;
+    animation-delay: -1.2s;
+  }
+  .lds-grid div:nth-child(7) {
+    top: 56px;
+    left: 8px;
+    animation-delay: -0.8s;
+  }
+  .lds-grid div:nth-child(8) {
+    top: 56px;
+    left: 32px;
+    animation-delay: -1.2s;
+  }
+  .lds-grid div:nth-child(9) {
+    top: 56px;
+    left: 56px;
+    animation-delay: -1.6s;
+  }
+  @keyframes lds-grid {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  } */
