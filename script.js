@@ -7,6 +7,7 @@ var outdoorsEl = document.getElementById('ssBtn5');
 var captionEl = document.getElementsByClassName('captionEl')[0];
 
 var textContainer = document.getElementById('textContainer');
+var apiReturn = document.getElementById('apiReturn')
 
 // array to store captions in localstorage
 var userGeneratedCaptionsArr = [];
@@ -189,6 +190,16 @@ function newCaption(captionArr) {
 }
 
 
+var requestOptions = {
+  method: 'GET',
+};
+
+var containerE2 = document.getElementsByClassName("containerE2") 
+
+fetch('https://api.geoapify.com/v1/geocode/search?text=38%20Upper%20Montagu%20Street%2C%20Westminster%20W1H%201LJ%2C%20United%20Kingdom&apiKey=139103a3354b413a9d4d59f0a595bbfb', requestOptions)
+.then(response => response.json())
+.then(result => console.log(result))
+.catch(error => console.log('error', error));
 
 
 
