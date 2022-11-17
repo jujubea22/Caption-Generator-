@@ -1,28 +1,23 @@
-var containerEl = document.getElementsByClassName('situationBtn');
-var friendshipEl = document.getElementById('ssBtn1');
-var vacationEl = document.getElementById('ssBtn2');
-var holidaysEl = document.getElementById('ssBtn3');
-var themeEl = document.getElementById('ssBtn4');
-var outdoorsEl = document.getElementById('ssBtn5');
-var captionEl = document.getElementsByClassName('captionEl')[0];
-
-var textContainer = document.getElementById('textContainer');
-var apiReturn = document.getElementById('apiReturn')
-
-// array to store captions in localstorage
-var userGeneratedCaptionsArr = [];
-
-
+var containerEl = document.getElementsByClassName('situationBtn')
+var friendshipEl = document.getElementById('ssBtn1')
+var vacationEl = document.getElementById('ssBtn2')
+var holidaysEl = document.getElementById('ssBtn3')
+var themeEl = document.getElementById('ssBtn4')
+var outdoorsEl = document.getElementById('ssBtn5')
+var captionEl = document.getElementsByClassName('captionEl')[0]
+var textContainer = document.getElementById('textContainer')
+var refreshBtn = document.getElementById('refresh')
 
 function start() {
-    captionEl.innerHTML = 'Caption Generator';
-
+    captionEl.innerHTML = 'Choose Caption Category'
+    captionEl.style.fontFamily = 'Air Travelers'
+    captionEl.style.textShadow = '1px 1px 1px , 1px 5px 2px #363945'
 }
 
 start()
 
 function hideContainer() {
-    captionEl.setAttribute('style', 'display:none');
+    captionEl.setAttribute('style', 'display:none')
 }
 
 
@@ -34,10 +29,8 @@ function hideBtn() {
     themeEl.setAttribute('style', 'display:none');
     outdoorsEl.setAttribute('style', 'display:none');
 
-    // refreshBtn.remove('class');
-
+    refreshBtn.remove('class')
 }
-
 
 var friendshipCaption = [ "Friends ‘till the end.", 
         "A true friend is one soul in two bodies.",
@@ -107,83 +100,44 @@ var vacationCaption = [
     "Trailblazin’ through the weekend",
   ]
 
+ localStorage.setItem('outdoorsCaption', [])
+ console.log(localStorage)
 
-
-function showCaption(captionArr, storageArea) {
-  
-  // loads items from local storage
-  var userCaptionsString = localStorage.getItem(storageArea);
-  if(userCaptionsString !== undefined && userCaptionsString !== null && userCaptionsString !== "") {
-    userGeneratedCaptionsArr = JSON.parse(userCaptionsString);
-  } 
-
-  // sets empty array if localstorage array is equal in length to the captions array. 
-  if(userGeneratedCaptionsArr.length == captionArr.length) {
-    userGeneratedCaptionsArr = [];
-  }
-
+  function showCaption(captionArr) {
     var newDisplay = newCaption(captionArr)
 
-    // var to find caption in local storage array
-    var findCaptions = userGeneratedCaptionsArr.find(el => el == newDisplay);
-
-    // prevents the same caption from loading twice
-    while(findCaptions == newDisplay) {
-      newDisplay = newCaption(captionArr);
-      findCaptions = userGeneratedCaptionsArr.find(el => el == newDisplay);
-    } 
-
-    var pEl =  document. createElement('p');
-    pEl.textContent = newDisplay;
-    pEl.setAttribute('id', 'caption');
-    userGeneratedCaptionsArr.unshift(newDisplay);
-    localStorage.setItem(storageArea, JSON.stringify(userGeneratedCaptionsArr));
-
-
-
-
+    var pEl =  document. createElement('p')
+    pEl.textContent = newDisplay
 
 
     var refreshBtn = document.createElement('button');
-    refreshBtn.textContent = 'Refresh';
-    refreshBtn.setAttribute('class', 'ssBtn');
+    refreshBtn.textContent = 'Refresh'
+    refreshBtn.setAttribute('class', 'ssBtn')
+    refreshBtn.style.margin = '0 auto'
+    refreshBtn.style.display = 'block'
 
-    // document.getElementById('paragraphEl').textContent = newDisplay
-    // captionEl.setAttribute('style', 'display:none')
-    captionEl.innerHTML = "Caption here"
+    captionEl.innerHTML = "Thinking of the right caption is hard, heres one on us  :"
     console.log(captionEl)
 
     refreshBtn.addEventListener('click', function(){
       window.location.href = 'index.html'
-
     }) 
 
-    textContainer.append(pEl, refreshBtn);
-
+    textContainer.append(pEl, refreshBtn)
 }
-
-
-
 
 document.querySelectorAll('.ssBtn').forEach(x=>x.addEventListener('click', hideBtn))
   
 
-
-friendshipEl.addEventListener('click', ()=>showCaption(friendshipCaption, "userFriendshipCaptions"))
-vacationEl.addEventListener('click', ()=>showCaption(vacationCaption, "userVacationCaptions"))
-holidaysEl.addEventListener('click', ()=>showCaption(holidaysCaption, "userHolidaysCaptions"))
-themeEl.addEventListener('click', ()=>showCaption(themeCaption, "userThemeCaptions"))
-outdoorsEl.addEventListener('click', ()=>showCaption(outdoorsCaption, "userOutdoorsCaptions"))
-
-
-// document.getElementById('paragraphEl').innerHTML = ["fdsdsfsa", 'sdfdfg']
-
-
+friendshipEl.addEventListener('click', ()=>showCaption(friendshipCaption))
+vacationEl.addEventListener('click', ()=>showCaption(vacationCaption))
+holidaysEl.addEventListener('click', ()=>showCaption(holidaysCaption))
+themeEl.addEventListener('click', ()=>showCaption(themeCaption))
+outdoorsEl.addEventListener('click', ()=>showCaption(outdoorsCaption))
 
 
 function newCaption(captionArr) {
     
-
     var randomNumber = Math.floor(Math.random() * (captionArr.length));
     var randomCaption = captionArr[randomNumber]
     return randomCaption
@@ -191,19 +145,18 @@ function newCaption(captionArr) {
 
 
 var requestOptions = {
-  method: 'GET',
-};
+    method: 'GET',
+  };
+  
+  var containerE2 = document.getElementsByClassName("containerE2") 
+  
+  fetch('https://api.geoapify.com/v1/geocode/search?text=38%20Upper%20Montagu%20Street%2C%20Westminster%20W1H%201LJ%2C%20United%20Kingdom&apiKey=139103a3354b413a9d4d59f0a595bbfb', requestOptions)
+  .then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+  
 
-var containerE2 = document.getElementsByClassName("containerE2") 
-
-fetch('https://api.geoapify.com/v1/geocode/search?text=38%20Upper%20Montagu%20Street%2C%20Westminster%20W1H%201LJ%2C%20United%20Kingdom&apiKey=139103a3354b413a9d4d59f0a595bbfb', requestOptions)
-.then(response => response.json())
-.then(result => console.log(result))
-.catch(error => console.log('error', error));
-
-
-
-// // hide div container
-// document.getElementById("situationBtn").setAttribute('style', 'display: none');
-// // display div container
-// document.getElementById("id-name").setAttribute('style', 'display: block');
+// fetch('https://serpapi.com//search?engine?q=google_trends&tbm=isch&ijn=0&api_key=6f145bea7dab7af91e5531e4a384e80f26ac3fc416ec69ca0d93348e359b0662')
+// .then(res=>{
+//     console.log(res)
+// })
