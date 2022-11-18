@@ -107,6 +107,12 @@ body {
 .ssBtn:hover {
     background-color: rgba(62, 182, 237, 0.582);
 }
+#map{
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
 
 footer {
     margin-left: auto;
