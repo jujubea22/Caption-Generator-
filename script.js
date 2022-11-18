@@ -150,11 +150,98 @@ var requestOptions = {
   
   var containerE2 = document.getElementsByClassName("containerE2") 
   
-  fetch('https://api.geoapify.com/v1/geocode/search?text=38%20Upper%20Montagu%20Street%2C%20Westminster%20W1H%201LJ%2C%20United%20Kingdom&apiKey=139103a3354b413a9d4d59f0a595bbfb', requestOptions)
+  fetch("https://api.geoapify.com/v1/geocode/reverse?lat=52.51894887928074&lon=13.409808180753316&format=json&apiKey=139103a3354b413a9d4d59f0a595bbfb")
+  .then(response => response.json())
   .then(response => response.json())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
   
+  var scopeApi = ['https://www.googleapis.com/auth/photoslibrary', 'https://www.googleapis.com/auth/photoslibrary.readonly', 'https://www.googleapis.com/auth/photoslibrary.readonly.appcreateddata'];
+
+  function onAuthPhotoApiLoad() {
+      window.gapi.auth.authorize(
+          {
+              'client_id': "Put Client ID Here",
+              'scope': scopeApi,
+              'immediate': false
+          },
+          handlePhotoApiAuthResult);
+  }
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, handleError);
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+    }
+  }
+getLocation()
+  function handleError(error) {
+    let errorStr;
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        errorStr = 'User denied the request for Geolocation.';
+        break;
+      case error.POSITION_UNAVAILABLE:
+        errorStr = 'Location information is unavailable.';
+        break;
+      case error.TIMEOUT:
+        errorStr = 'The request to get user location timed out.';
+        break;
+      case error.UNKNOWN_ERROR:
+        errorStr = 'An unknown error occurred.';
+        break;
+      default:
+        errorStr = 'An unknown error occurred.';
+    }
+    console.error('Error occurred: ' + errorStr);
+  }
+  
+  function showPosition(position) {
+    console.log(`Latitude: ${position.coords.latitude}, longitude: ${position.coords.longitude}`);
+  fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&apiKey=139103a3354b413a9d4d59f0a595bbfb`)
+.then(function(results){
+  return results.json()
+}).then(function(data){
+  console.log (data)
+  let marker;
+  marker = L.marker(new L.LatLng(position.coords.latitude, position.coords.longitude)).addTo(map);
+})  
+}
+
+  
+  function handlePhotoApiAuthResult(authResult) {
+      if (authResult && !authResult.error) {
+          oauthToken = authResult.access_token;
+  
+                 GetAllPhotoGoogleApi();
+      }
+  }
+
+  document.getElementById("submit").addEventListener('click', function(e){
+  e.preventDefault();
+
+  fetch('https://random-words-api.herokuapp.com/w?n=10')
+    .then(
+      function(response) {
+        if (response.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+          return;
+        }
+        response.json().then(function(data) {
+          console.log(data);
+          document.getElementById('resultsApi').innerHTML = data;
+        });
+      }
+    )
+    .catch(function(err) {
+      console.log('Fetch Error :-S', err);
+    });
+  });
+  map.loadImage(`https://api.geoapify.com/v1/icon/?icon=coffee&color=%23ff9999&size=large&type=awesome&apiKey=${YOUR_API_KEY}`, function(error, image) {
+    if (error) throw error;
+    map.addImage('rosa-pin', image); //38x55px, shadow adds 5px
+  }); 
 
 // fetch('https://serpapi.com//search?engine?q=google_trends&tbm=isch&ijn=0&api_key=6f145bea7dab7af91e5531e4a384e80f26ac3fc416ec69ca0d93348e359b0662')
 // .then(res=>{
